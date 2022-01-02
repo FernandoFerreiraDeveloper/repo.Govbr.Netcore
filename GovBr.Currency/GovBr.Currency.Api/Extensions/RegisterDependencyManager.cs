@@ -11,7 +11,8 @@ namespace GovBr.Currency.Api.Extensions
         public static void RegisterDependencies(this IServiceCollection services) 
         {
             services.AddScoped<IExchangeService, ExchangeService>();
-            services.AddScoped<IExchangeRepository, ExchangeRepository>();            
+            services.AddScoped<IExchangeRepository, ExchangeRepository>();
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
         }
     }
 }

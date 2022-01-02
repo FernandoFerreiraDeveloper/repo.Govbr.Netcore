@@ -17,9 +17,9 @@ namespace GovBr.Currency.Api.Controllers
         public ExchangeController(IExchangeService exchangeService) => this._exchangeService = exchangeService;
         [HttpGet]
         [SwaggerResponse(HttpStatusCode.OK, typeof(List<ExchangeDto>), Description = "The exchanges")]
-        public async Task<IActionResult> GetCultures()
+        public IActionResult GetCultures()
         {
-            return Ok(await _exchangeService.GetAsync());
+            return Ok(_exchangeService.GetAsync());
         }
     }
 }

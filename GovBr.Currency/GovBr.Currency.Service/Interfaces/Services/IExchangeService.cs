@@ -6,6 +6,6 @@ namespace GovBr.Currency.Service.Interfaces.Services
 {
     public interface IExchangeService
     {
-        Task<List<ExchangeDto>> GetAsync();
+        List<ExchangeDto> GetAsync();
     }
 }

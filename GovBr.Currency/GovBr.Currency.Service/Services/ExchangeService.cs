@@ -12,9 +12,9 @@ namespace GovBr.Currency.Service.Services
     {
         private readonly IExchangeRepository _exchangeRepository;
         public ExchangeService(IExchangeRepository exchangeRepository) => _exchangeRepository = exchangeRepository;
-        public async Task<List<ExchangeDto>> GetAsync()
+        public List<ExchangeDto> GetAsync()
         {
-            var exchangesModel = await _exchangeRepository.GetAsync();
+            var exchangesModel = _exchangeRepository.FindAll().ToList();
 
             var exchangesDto = exchangesModel.
                                Select(model => 

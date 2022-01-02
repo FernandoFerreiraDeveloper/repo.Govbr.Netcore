@@ -1,11 +1,10 @@
-﻿using GovBr.Currency.Service.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using GovBr.Currency.Repository.Repositories;
+using GovBr.Currency.Service.Models;
 
 namespace GovBr.Currency.Service.Interfaces.Repositories
 {
-    public interface IExchangeRepository
+    public interface IExchangeRepository : IRepositoryBase<Exchange>
     {
-        Task<List<Exchange>> GetAsync();
+        
     }
 }

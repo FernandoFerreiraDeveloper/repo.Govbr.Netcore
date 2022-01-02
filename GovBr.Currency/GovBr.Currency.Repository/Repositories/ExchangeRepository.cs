@@ -7,17 +7,10 @@ using System.Threading.Tasks;
 
 namespace GovBr.Currency.Repository.Repositories
 {
-    public class ExchangeRepository : IExchangeRepository
+    public class ExchangeRepository : RepositoryBase<Exchange>, IExchangeRepository
     {
-        private readonly CurrencyContext _currencyContext;
-        
-        public ExchangeRepository(CurrencyContext currencyContext) => _currencyContext = currencyContext;
-
-        public async Task<List<Exchange>> GetAsync()
+        public ExchangeRepository(CurrencyContext currencyContext) : base(currencyContext) 
         {
-            var exchanges = await _currencyContext.Exchanges.ToListAsync();
-
-            return exchanges;
-        }
+        }        
     }
 }
