@@ -1,16 +1,12 @@
+using GovBr.Currency.Api.Extensions;
+using GovBr.Currency.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GovBr.Currency.Api
 {
@@ -28,6 +24,10 @@ namespace GovBr.Currency.Api
         {
 
             services.AddControllers();
+            services.RegisterDependencies();
+            services.AddDbContext<CurrencyContext>(opts =>
+                opts.UseSqlServer(Configuration.GetConnectionString("sqlConnection")));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GovBr.Currency.Api", Version = "v1" });

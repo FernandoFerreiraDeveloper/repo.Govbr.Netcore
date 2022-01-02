@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GovBr.Currency.Api", "GovBr.Currency.Api\GovBr.Currency.Api.csproj", "{5D997CC5-E18E-4449-BCD2-75F0631EA6B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GovBr.Currency.Repository", "GovBr.Currency.Repository\GovBr.Currency.Repository.csproj", "{B267EE03-9065-4892-A9FF-EE1EDA0F7EC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GovBr.Currency.Service", "GovBr.Currency.Service\GovBr.Currency.Service.csproj", "{2D3977C0-F68E-4F27-B45D-138BDA9678B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5D997CC5-E18E-4449-BCD2-75F0631EA6B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D997CC5-E18E-4449-BCD2-75F0631EA6B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D997CC5-E18E-4449-BCD2-75F0631EA6B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B267EE03-9065-4892-A9FF-EE1EDA0F7EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B267EE03-9065-4892-A9FF-EE1EDA0F7EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B267EE03-9065-4892-A9FF-EE1EDA0F7EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B267EE03-9065-4892-A9FF-EE1EDA0F7EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D3977C0-F68E-4F27-B45D-138BDA9678B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D3977C0-F68E-4F27-B45D-138BDA9678B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D3977C0-F68E-4F27-B45D-138BDA9678B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D3977C0-F68E-4F27-B45D-138BDA9678B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
