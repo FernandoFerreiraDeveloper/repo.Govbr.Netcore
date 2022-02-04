@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GovBr.Currency.Api", "GovBr.Currency.Api\GovBr.Currency.Api.csproj", "{5D997CC5-E18E-4449-BCD2-75F0631EA6B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GovBr.Currency.Api", "GovBr.Currency.Api\GovBr.Currency.Api.csproj", "{5D997CC5-E18E-4449-BCD2-75F0631EA6B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GovBr.Currency.Repository", "GovBr.Currency.Repository\GovBr.Currency.Repository.csproj", "{B267EE03-9065-4892-A9FF-EE1EDA0F7EC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GovBr.Currency.Repository", "GovBr.Currency.Repository\GovBr.Currency.Repository.csproj", "{B267EE03-9065-4892-A9FF-EE1EDA0F7EC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GovBr.Currency.Service", "GovBr.Currency.Service\GovBr.Currency.Service.csproj", "{2D3977C0-F68E-4F27-B45D-138BDA9678B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GovBr.Currency.Service", "GovBr.Currency.Service\GovBr.Currency.Service.csproj", "{2D3977C0-F68E-4F27-B45D-138BDA9678B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-API", "1-API", "{7EF239FA-AEF0-4550-A620-EDDC19DDBE5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Service", "2-Service", "{8A29514A-B7FA-4B7E-B54D-47A10B98E0F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Repository", "3-Repository", "{ED02FEF9-FBA9-4923-A372-057D6B6E3019}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +36,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D997CC5-E18E-4449-BCD2-75F0631EA6B2} = {7EF239FA-AEF0-4550-A620-EDDC19DDBE5B}
+		{B267EE03-9065-4892-A9FF-EE1EDA0F7EC2} = {ED02FEF9-FBA9-4923-A372-057D6B6E3019}
+		{2D3977C0-F68E-4F27-B45D-138BDA9678B9} = {8A29514A-B7FA-4B7E-B54D-47A10B98E0F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8C644EB-90C5-4416-AD54-00D9115E73BF}
