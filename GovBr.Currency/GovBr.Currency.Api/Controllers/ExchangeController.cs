@@ -14,12 +14,22 @@ namespace GovBr.Currency.Api.Controllers
     public class ExchangeController : Controller
     {
         private readonly IExchangeService _exchangeService;
+        
         public ExchangeController(IExchangeService exchangeService) => this._exchangeService = exchangeService;
+        
+        
         [HttpGet]
         [SwaggerResponse(HttpStatusCode.OK, typeof(List<ExchangeDto>), Description = "The exchanges")]
-        public IActionResult GetCultures()
+        public async Task<IActionResult> GetCultures()
         {
-            return Ok(_exchangeService.GetAsync());
+            return Ok(await _exchangeService.GetAllAsync());
+        }
+
+        [HttpGet("{country}")]
+        [SwaggerResponse(HttpStatusCode.OK, typeof(ExchangeDto), Description = "The exchange by country")]
+        public async Task<IActionResult> Get(string country)
+        {
+            return Ok(await _exchangeService.GetByIdAsync(country));
         }
     }
 }
