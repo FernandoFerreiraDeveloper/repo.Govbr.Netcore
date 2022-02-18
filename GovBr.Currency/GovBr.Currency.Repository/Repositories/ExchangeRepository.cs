@@ -1,9 +1,5 @@
-﻿using GovBr.Currency.Service.Interfaces.Repositories;
-using GovBr.Currency.Service.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using GovBr.Currency.Service.Models;
+using GovBr.Currency.Service.Interfaces.Repositories;
 
 namespace GovBr.Currency.Repository.Repositories
 {

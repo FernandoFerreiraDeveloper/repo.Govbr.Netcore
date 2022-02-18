@@ -31,5 +31,13 @@ namespace GovBr.Currency.Api.Controllers
         {
             return Ok(await _exchangeService.GetByIdAsync(country));
         }
+
+        [HttpPost]
+        [SwaggerResponse(HttpStatusCode.OK, typeof(bool), Description = "Insert a new Exchange")]
+        public async Task<IActionResult> Post(ExchangeDto exchangeDto)
+        {
+            return Ok(await _exchangeService.InsertAsync(exchangeDto));
+        }
+
     }
 }

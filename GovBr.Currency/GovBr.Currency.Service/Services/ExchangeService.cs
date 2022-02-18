@@ -1,11 +1,11 @@
-﻿using GovBr.Currency.Service.Dtos;
-using GovBr.Currency.Service.Interfaces.Repositories;
-using GovBr.Currency.Service.Interfaces.Services;
-using GovBr.Currency.Service.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using GovBr.Currency.Service.Dtos;
+using GovBr.Currency.Service.Mappers;
+using GovBr.Currency.Service.Interfaces.Services;
+using GovBr.Currency.Service.Interfaces.Repositories;
+
 
 namespace GovBr.Currency.Service.Services
 {
@@ -20,7 +20,8 @@ namespace GovBr.Currency.Service.Services
             var exchangesModel = await _exchangeRepository.GetAllAsync();
 
             var exchangesDto = exchangesModel.
-                               Select(model => MatToExchangeDto(model)).ToList();
+                               Select(model => model.MatToExchangeDto()).
+                               ToList();
 
             return exchangesDto;
         }
@@ -29,20 +30,21 @@ namespace GovBr.Currency.Service.Services
         {
             var exchangeModel = await _exchangeRepository.GetByIdAsync(code);
 
-            var exchangeDto = MatToExchangeDto(exchangeModel);
+            var exchangeDto = exchangeModel.MatToExchangeDto();
 
             return exchangeDto;
         }
 
-        private static ExchangeDto MatToExchangeDto(Exchange model)
+        public async Task<bool> InsertAsync(ExchangeDto exchangeDto)
         {
-            return new ExchangeDto
-            {
-                Code = model.Code,
-                Country = model.Country,
-                Currency = model.Currency,
-                Number = model.Number
-            };
+            var model = exchangeDto.MatToExchangeModel();
+
+            var inserted = await _exchangeRepository.InsertAsync(model);
+
+            return inserted;
         }
+
+       
+
     }
 }

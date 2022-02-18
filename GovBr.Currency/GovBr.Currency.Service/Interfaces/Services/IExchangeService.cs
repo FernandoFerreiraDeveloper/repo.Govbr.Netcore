@@ -9,5 +9,7 @@ namespace GovBr.Currency.Service.Interfaces.Services
         Task<List<ExchangeDto>> GetAllAsync();
 
         Task<ExchangeDto> GetByIdAsync(string code);
+
+        Task<bool> InsertAsync(ExchangeDto exchangeDto);
     }
 }
