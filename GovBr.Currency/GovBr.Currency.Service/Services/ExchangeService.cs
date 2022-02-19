@@ -17,18 +17,20 @@ namespace GovBr.Currency.Service.Services
         
         public async Task<List<ExchangeDto>> GetAllAsync()
         {
-            var exchangesModel = await _exchangeRepository.GetAllAsync();
+            var exchangesModel = await _exchangeRepository.
+                                         GetAllAsync();
 
             var exchangesDto = exchangesModel.
-                               Select(model => model.MatToExchangeDto()).
-                               ToList();
+                                Select(model => model.MatToExchangeDto()).
+                                ToList();
 
             return exchangesDto;
         }
         
         public async Task<ExchangeDto> GetByIdAsync(string code) 
         {
-            var exchangeModel = await _exchangeRepository.GetByIdAsync(code);
+            var exchangeModel = await _exchangeRepository.
+                                        GetByIdAsync(code);
 
             var exchangeDto = exchangeModel.MatToExchangeDto();
 
@@ -39,12 +41,11 @@ namespace GovBr.Currency.Service.Services
         {
             var model = exchangeDto.MatToExchangeModel();
 
-            var inserted = await _exchangeRepository.InsertAsync(model);
+            var inserted = await _exchangeRepository.
+                                    InsertAsync(model);
 
             return inserted;
-        }
-
-       
+        }       
 
     }
 }

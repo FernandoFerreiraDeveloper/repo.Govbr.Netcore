@@ -12,11 +12,10 @@ namespace GovBr.Currency.Api.Controllers
     [Route("api/v1/exchanges")]
     [OpenApiTag("Exchanges", Description = "All exchanges in database")]
     public class ExchangeController : Controller
-    {
+    {        
         private readonly IExchangeService _exchangeService;
         
-        public ExchangeController(IExchangeService exchangeService) => this._exchangeService = exchangeService;
-        
+        public ExchangeController(IExchangeService exchangeService) => this._exchangeService = exchangeService;        
         
         [HttpGet]
         [SwaggerResponse(HttpStatusCode.OK, typeof(List<ExchangeDto>), Description = "The exchanges")]
@@ -38,6 +37,5 @@ namespace GovBr.Currency.Api.Controllers
         {
             return Ok(await _exchangeService.InsertAsync(exchangeDto));
         }
-
     }
 }
