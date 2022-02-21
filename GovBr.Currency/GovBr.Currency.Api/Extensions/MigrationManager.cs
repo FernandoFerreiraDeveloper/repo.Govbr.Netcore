@@ -11,7 +11,7 @@ namespace GovBr.Currency.Api.Extensions
 {
     public static class MigrationManager
     {
-        public static IHost MigrateDatabase(this IHost webHost)
+        public static IHost MigrateDatabase(this IHost webHost) 
         {
             using (var scope = webHost.Services.CreateScope())
             {

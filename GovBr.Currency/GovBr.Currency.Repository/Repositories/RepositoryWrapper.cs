@@ -5,7 +5,7 @@ namespace GovBr.Currency.Repository.Repositories
     public class RepositoryWrapper : IRepositoryWrapper
     {
         private CurrencyContext _context;
-
+        
         private IExchangeRepository _exchangeRepository;
 
         public IExchangeRepository Exchange
